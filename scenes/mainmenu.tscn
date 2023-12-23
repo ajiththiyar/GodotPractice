@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://cec8ejt3n30is"]
+
+[ext_resource type="Texture2D" uid="uid://c4643cabuil3i" path="res://scenes/Assets/Brown.png" id="1_mkio4"]
+[ext_resource type="Texture2D" uid="uid://d3anjqc5itghi" path="res://scenes/Assets/Cool Text - Jumpy Boy 449496893934743.png" id="2_iu37f"]
+[ext_resource type="Script" path="res://scenes/level1.gd" id="3_87nfb"]
+
+[node name="mainmenu" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mkio4")
+stretch_mode = 1
+
+[node name="Title" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -175.0
+offset_right = 372.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_iu37f")
+stretch_mode = 1
+
+[node name="level1" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -354.0
+offset_top = 66.0
+offset_right = -145.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 1"
+script = ExtResource("3_87nfb")
+
+[node name="level2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 41.0
+offset_top = 66.0
+offset_right = 250.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 2
+"
+
+[connection signal="pressed" from="level1" to="level1" method="_on_pressed"]
+[connection signal="pressed" from="level2" to="level1" method="_on_level_2_pressed"]
